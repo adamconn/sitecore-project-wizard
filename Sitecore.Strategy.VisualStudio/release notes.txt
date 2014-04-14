@@ -1,0 +1,7 @@
+Sitecore Project Wizard Release Notes
+1.0.2
+* Fixed broken reference that prevented new projects from being created
+1.0.1
+* Fixed bug when creating a new project without having any assemblies defined
+1.0.0
+* Initial release

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <PropertyGroup>
+    <Site Server="$rocks_Site_HostName$" UserName="$rocks_Site_UserName$" IsRemoteSitecore="True" />
+  </PropertyGroup>
+  <ItemGroup />
+</Project>

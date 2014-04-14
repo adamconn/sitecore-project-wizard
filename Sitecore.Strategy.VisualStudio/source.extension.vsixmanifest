@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+  <Metadata>
+    <Identity Id="D972ECD8-BF71-4431-A104-A7EA6FA8906C" Version="1.0.2" Language="en-US" Publisher="Adam Conn" />
+    <DisplayName>Sitecore Project Wizard</DisplayName>
+    <Description xml:space="preserve">Visual Studio extension that facilitates the creation of Sitecore projects including Sitecore Rocks configuration and Sitecore assembly references.</Description>
+    <License>license.txt</License>
+    <ReleaseNotes>release notes.txt</ReleaseNotes>
+    <Icon>sitecore.ico</Icon>
+    <PreviewImage>preview.png</PreviewImage>
+  </Metadata>
+  <Installation InstalledByMsi="false">
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[12.0]" />
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+    <Dependency Id="Microsoft.VisualStudio.MPF.12.0" DisplayName="Visual Studio MPF 12.0" d:Source="Installed" Version="[12.0]" />
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+    <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="Project" d:ProjectName="WebAppTemplate" d:TargetPath="|WebAppTemplate;TemplateProjectOutputGroup|" Path="ProjectTemplates" d:VsixSubPath="ProjectTemplates" />
+    <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="%CurrentProject%.Wizards" Path="|Sitecore.Strategy.VisualStudio.Wizards|" AssemblyName="|Sitecore.Strategy.VisualStudio.Wizards;AssemblyName|" />
+  </Assets>
+</PackageManifest>
