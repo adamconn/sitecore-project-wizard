@@ -1,4 +1,10 @@
 Sitecore Project Wizard Release Notes
+1.0.6
+* Visual Studio 2015 support
+1.0.4
+* Sitecore servers running on explicitly specified ports now supported (such as sc75:8080)
+1.0.3
+* Added publish profile
 1.0.2
 * Fixed broken reference that prevented new projects from being created
 1.0.1

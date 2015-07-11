@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7FF87D4A-6386-42CA-A538-6A94CAD1C6C1}</ProjectGuid>
+    <ProjectGuid>{C602D500-8EC7-418F-9FF1-6521A9E3F7E0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Sitecore.Strategy.VisualStudio.Wizards</RootNamespace>
     <AssemblyName>Sitecore.Strategy.VisualStudio.Wizards</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -36,27 +36,45 @@
     <AssemblyOriginatorKeyFile>Sitecore.Strategy.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <Reference Include="envdte, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
-    <Reference Include="Microsoft.VisualStudio.Shell.12.0, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualStudio.TemplateWizardInterface, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="PresentationCore" />
-    <Reference Include="Sitecore.Rocks">
-      <HintPath>..\..\..\..\..\AppData\Local\Microsoft\VisualStudio\12.0\Extensions\v5di1mwh.3im\Sitecore.Rocks.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Sitecore.Rocks, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a3d60f56f7d71b90, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Rocks.Client.1.5.0.0\lib\net40\Sitecore.Rocks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Rocks.Plugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=97d4151bbb4c9bdf, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Rocks.Client.1.5.0.0\lib\net40\Sitecore.Rocks.Plugins.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Rocks.Speak, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bde424fe5a27fd6a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Rocks.Client.1.5.0.0\lib\net40\Sitecore.Rocks.Speak.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Rocks.Validation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=87bd4324f13866a8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Rocks.Client.1.5.0.0\lib\net40\Sitecore.Rocks.Validation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Rocks.VisualStudio, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1cc94664b6ed6bb0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Rocks.Client.1.5.0.0\lib\net40\Sitecore.Rocks.VisualStudio.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="VSLangProj, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -64,13 +82,10 @@
     <Compile Include="TemplateProjectWizard.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Sitecore.Strategy.pfx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
-  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -31,6 +31,8 @@ namespace Sitecore.Strategy.VisualStudio.Wizards
             replacementsDictionary.Add("$rocks_Site_DataServiceName$", site.DataServiceName);
             replacementsDictionary.Add("$rocks_Site_HostName$", site.HostName);
             replacementsDictionary.Add("$rocks_Site_Name$", site.Name);
+            var safeSiteName = string.Join("_", site.Name.Split(System.IO.Path.GetInvalidFileNameChars()));
+            replacementsDictionary.Add("$rocks_Site_Name_safe$", safeSiteName);
             replacementsDictionary.Add("$rocks_Site_UserName$", site.UserName);
             replacementsDictionary.Add("$rocks_Site_WebRootPath$", site.WebRootPath);
             //TODO: set values using version...
